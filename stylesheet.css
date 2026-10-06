@@ -1,10 +1,11 @@
 /* Root */
 :root {
   --main-color: #ff0000;
+  --secondary-color: #190000;
   --text-color: #fafafa;
   --bg-color: #000000;
   --content-bg-color: #6d0e0e;
-  --hero-color: #140000;
+  --hero-color: #230000;
   --heading-font: 'Montserrat-Regular.ttf', serif;
 }
 
@@ -22,26 +23,35 @@ body {
 }
 
 p,h1,h2,h3, ul, li{
-    color: var(--text-color);
-    padding: 0;
+  color: var(--text-color);
+  padding: 0;
   margin: 0;
+}
+
+p{
+  padding-bottom: 20px;
 }
 
 h1{
   font-size: 32px;
-  padding: 0;
+  padding-bottom: 20px;
   margin: 0;
 }
 
 h2{
   padding: 0;
-  margin: 0;
+  padding-bottom: 20px;
+}
+
+h3{
+  padding-top: 20px;
 }
 
 ul {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  margin:0;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 li {
@@ -49,7 +59,7 @@ li {
   margin-right: 15px;
 }
 
-/* Game image class */
+/* Classes */
 
 .gameimage {
   border: 5px solid #ff0000;
@@ -62,8 +72,20 @@ li {
   margin: 0;
 }
 
-.content-section{
-  background-color: var(--content-bg-color);
+.content-section-a{
+  background: linear-gradient(to left, var(--hero-color) 0%, var(--content-bg-color) 100%);
+}
+
+.content-section-b{
+  background: linear-gradient(to right, var(--hero-color) 0%, var(--content-bg-color) 100%);
+}
+
+.content-section-c{
+  background: linear-gradient(to left, var(--hero-color) 0%, var(--content-bg-color) 100%);
+}
+
+.contact-section{
+  background-color: var(--secondary-color);
 }
 
 .hero-section{
@@ -73,6 +95,6 @@ li {
 hr {
   border: none;            
   border-top: 5px solid #000000;      
-  padding: 0;    
+  padding-bottom: 20px; 
   margin: 0;
 }
