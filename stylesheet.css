@@ -1,3 +1,14 @@
+/* Root */
+:root {
+  --main-color: #ff0000;
+  --text-color: #fafafa;
+  --bg-color: #000000;
+  --content-bg-color: #6d0e0e;
+  --hero-color: #140000;
+  --heading-font: 'Montserrat-Regular.ttf', serif;
+}
+
+/* Fonts */
 @font-face {
   font-family: 'Montserrat-Regular.ttf';
   src: url('fonts/Montserrat-Regular.ttf') format('truetype');
@@ -7,15 +18,24 @@
 
 body {
   font-family: 'Montserrat-Regular.ttf', sans-serif;
-  background-color: black;
+  background-color: var(--bg-color);
 }
 
 p,h1,h2,h3, ul, li{
-    color:white;
+    color: var(--text-color);
+    padding: 0;
+  margin: 0;
 }
 
 h1{
   font-size: 32px;
+  padding: 0;
+  margin: 0;
+}
+
+h2{
+  padding: 0;
+  margin: 0;
 }
 
 ul {
@@ -29,7 +49,30 @@ li {
   margin-right: 15px;
 }
 
+/* Game image class */
+
 .gameimage {
   border: 5px solid #ff0000;
   border-radius: 8px;      
+}
+
+.about-section{
+  background: linear-gradient(to bottom, var(--hero-color) 0%, var(--content-bg-color) 100%);
+  padding: 0;
+  margin: 0;
+}
+
+.content-section{
+  background-color: var(--content-bg-color);
+}
+
+.hero-section{
+  background-color: var(--hero-color);
+}
+
+hr {
+  border: none;            
+  border-top: 5px solid #000000;      
+  padding: 0;    
+  margin: 0;
 }
