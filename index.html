@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dylan Bassett's Portfolio</title>
-    <!-- Here I'll add a logo icon to the browser tab. -->
-    <link rel="icon" href="BI_Logo_2025-(1).avif">
+    <!-- Logo icon in the browser tab -->
+    <link rel="icon" type="image/avif" href="BI_Logo_2025-(1).avif">
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <center>
-    <div class="hero-section">
-    <header>
-        <a href=""><img src="BI_Logo_2025-(1).avif" alt="Bassett Interactive Logo"></a>
+    <header class="hero-section">
+        <a href="#"><img src="BI_Logo_2025-(1).avif" alt="Bassett Interactive Logo"></a>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -20,59 +18,54 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
-    <section>
         <h1>Dylan is a game developer and 4th year student at Michigan State University</h1>
-    </div>
-    </section>
-    <div class="about-section">
-    <section id="about">
-        <h2>About</h2>
-        <p>My name is Dylan Bassett and I'm a game developer and technical designer from the suburbs of Chicago, Illinois. I currently study Games and Interactive Media at Michigan State University with a minor in business.<br><br>I'm very proficient in Unreal Engine as a whole with a specialization in design & Blueprint and C++ programming. I've been making games for 14 years and using Unreal for over six.<br><br>My interests outside of game dev include reading and writing stories, cardio, physics, horror media, and spaceflight history. I'm also a licensed private pilot.</p>
-    </section>
-    </div>
-    <div class="content-section-a">
-    <hr>
-    <section id="projects">
-        <h2>Projects</h2>
-        <article>
-            <a href="https://store.steampowered.com/app/2118130/Chicken_Feet/"><img src="cf_logo_2.jpg" class="gameimage" alt="Chicken Feet Logo"></a>
-            <h3><a href="https://store.steampowered.com/app/2118130/Chicken_Feet/">Chicken Feet</a></h3>
-            <p>Chicken Feet is a first person survival-stealth horror game about a giant, angry chicken. Descend into the depths of GOOBER laboratories and uncover the horrors that lie beneath the lab's shiny façade.</p>
-        </article>
-    </div>
-    <div class="content-section-b">
-        <hr>
-        <article>
-            <a href ="https://store.steampowered.com/app/2569280/Below_Nowhere/"><img src ="bn_logo_2.jpg" class="gameimage" alt="Below Nowhere Logo"></a>
-            <h3><a href="https://store.steampowered.com/app/2569280/Below_Nowhere/">Below Nowhere</a></h3>
-            <p>Below Nowhere is a first-person survival horror game that will pull you into the depths of evil. While exploring strange memories that aren't yours, you will be pushed to your limits in this terrifying tale of humanity and second chances.</p>
-        </article>
-    </div>
-    <div class="content-section-c">
-        <hr>
-        <article>
-            <a href="https://store.steampowered.com/app/4283810/Blood_Rifleman/"><img src="br_logo_2.jpg" class="gameimage" alt="Blood Rifleman Logo"></a>
-            <h3><a href="https://store.steampowered.com/app/4283810/Blood_Rifleman/">Blood Rifleman</a></h3>
-            <p>Suddenly alone in a snowstorm, a camper is haunted by strange visions. A short, cinematic, mind-bending psychological horror nightmare. Beware the rifleman.</p>
-        </article>
-    </div>
-    <div class="contact-section">
-        <hr>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <address>
-            <p>contact@bassettinteractive.com</p>
-        </address>
-        <p><a href="https://www.linkedin.com/in/dylan-bassett-dev/">LinkedIn</a></p>
-    </section>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <h2>About</h2>
+            <p>My name is Dylan Bassett and I'm a game developer and technical designer from the suburbs of Chicago, Illinois. I currently study Games and Interactive Media at Michigan State University with a minor in business.</p>
+            <p>I'm very proficient in Unreal Engine as a whole with a specialization in design &amp; Blueprint and C++ programming. I've been making games for 14 years and using Unreal for over six.</p>
+            <p>My interests outside of game dev include reading and writing stories, cardio, physics, horror media, and spaceflight history. I'm also a private pilot.</p>
+        </section>
+
+        <section id="projects" class="content-section-a">
+            <hr>
+            <h2>Projects</h2>
+
+            <article>
+                <a href="https://store.steampowered.com/app/2118130/Chicken_Feet/"><img src="cf_logo_2.jpg" class="gameimage" alt="Chicken Feet Logo"></a>
+                <h3><a href="https://store.steampowered.com/app/2118130/Chicken_Feet/">Chicken Feet</a></h3>
+                <p>Chicken Feet is a first person survival-stealth horror game about a giant, angry chicken. Descend into the depths of GOOBER laboratories and uncover the horrors that lie beneath the lab's shiny façade.</p>
+            </article>
+
+            <article class="content-section-b">
+                <hr>
+                <a href="https://store.steampowered.com/app/2569280/Below_Nowhere/"><img src="bn_logo_2.jpg" class="gameimage" alt="Below Nowhere Logo"></a>
+                <h3><a href="https://store.steampowered.com/app/2569280/Below_Nowhere/">Below Nowhere</a></h3>
+                <p>Below Nowhere is a first-person survival horror game that will pull you into the depths of evil. While exploring strange memories that aren't yours, you will be pushed to your limits in this terrifying tale of humanity and second chances.</p>
+            </article>
+
+            <article class="content-section-c">
+                <hr>
+                <a href="https://store.steampowered.com/app/4283810/Blood_Rifleman/"><img src="br_logo_2.jpg" class="gameimage" alt="Blood Rifleman Logo"></a>
+                <h3><a href="https://store.steampowered.com/app/4283810/Blood_Rifleman/">Blood Rifleman</a></h3>
+                <p>Suddenly alone in a snowstorm, a camper is haunted by strange visions. A short, cinematic, mind-bending psychological horror nightmare. Beware the rifleman.</p>
+            </article>
+        </section>
+
+        <section id="contact">
+            <hr>
+            <h2>Contact</h2>
+            <address>
+                <p><a href="mailto:contact@bassettinteractive.com">contact@bassettinteractive.com</a></p>
+            </address>
+            <p><a href="https://www.linkedin.com/in/dylan-bassett-dev/">LinkedIn</a></p>
+        </section>
     </main>
+
     <footer>
         <p>Copyright &copy; 2026 Dylan Bassett</p>
     </footer>
-    </div>
-    </center>
 </body>
 </html>

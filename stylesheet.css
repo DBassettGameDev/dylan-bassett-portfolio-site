@@ -1,57 +1,71 @@
-/* Root */
+/* Custom properties */
 :root {
-  --main-color: #ff0000;
-  --secondary-color: #190000;
+  --main-color: #ff0000;        
+  --accent-color: #ff8a8a;      
+  --secondary-color: #1f0404;
   --text-color: #fafafa;
   --bg-color: #000000;
   --content-bg-color: #6d0e0e;
   --hero-color: #230000;
-  --heading-font: 'Montserrat-Regular.ttf', serif;
+  --heading-font: 'Montserrat', Arial, sans-serif;
+  --radius: 8px;
 }
 
-/* Fonts */
+/* Font */
 @font-face {
-  font-family: 'Montserrat-Regular.ttf';
+  font-family: 'Montserrat';
   src: url('fonts/Montserrat-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
+/* Main elements */
 body {
-  font-family: 'Montserrat-Regular.ttf', sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;          
+  line-height: 1.6;
+  margin: 0;
 }
 
-p,h1,h2,h3, ul, li{
+p, h1, h2, h3, ul, li {
   color: var(--text-color);
   padding: 0;
   margin: 0;
 }
 
-p{
-  padding-bottom: 20px;
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 
-h1{
+p {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+}
+
+h1 {
   font-size: 32px;
-  padding-bottom: 20px;
-  margin: 0;
+  padding: 0 20px 20px;
 }
 
-h2{
-  padding: 0;
+h2 {
   padding-bottom: 20px;
 }
 
-h3{
+h3 {
   padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 ul {
   list-style-type: none;
-  margin:0;
-  padding-bottom: 20px;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 li {
@@ -59,42 +73,78 @@ li {
   margin-right: 15px;
 }
 
-/* Classes */
+hr {
+  border: none;
+  border-top: 5px solid var(--bg-color);
+  margin: 0 0 20px;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--text-color);
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header img {
+  padding-top: 20px;
+}
 
 .gameimage {
-  border: 5px solid #ff0000;
-  border-radius: 8px;      
+  border: 5px solid var(--main-color);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.about-section{
-  background: linear-gradient(to bottom, var(--hero-color) 0%, var(--content-bg-color) 100%);
-  padding: 0;
-  margin: 0;
+.gameimage:hover {
+  transform: rotate(-2deg) scale(1.02);
+  box-shadow: 0 10px 24px rgba(255, 0, 0, 0.25);
 }
 
-.content-section-a{
-  background: linear-gradient(to left, var(--hero-color) 0%, var(--content-bg-color) 100%);
-}
-
-.content-section-b{
-  background: linear-gradient(to right, var(--hero-color) 0%, var(--content-bg-color) 100%);
-}
-
-.content-section-c{
-  background: linear-gradient(to left, var(--hero-color) 0%, var(--content-bg-color) 100%);
-}
-
-.contact-section{
-  background-color: var(--secondary-color);
-}
-
-.hero-section{
+/* Sections */
+.hero-section {
   background-color: var(--hero-color);
 }
 
-hr {
-  border: none;            
-  border-top: 5px solid #000000;      
-  padding-bottom: 20px; 
-  margin: 0;
+.about-section {
+  background: linear-gradient(to bottom, var(--hero-color) 0%, var(--content-bg-color) 100%);
+}
+
+.content-section-a,
+.content-section-c {
+  background: linear-gradient(to left, var(--hero-color) 0%, var(--content-bg-color) 100%);
+}
+
+.content-section-b {
+  background: linear-gradient(to right, var(--hero-color) 0%, var(--content-bg-color) 100%);
+}
+
+#contact {
+  background-color: var(--secondary-color);
+}
+
+footer {
+  background-color: var(--secondary-color);
+  font-size: 14px;
+  padding-top: 10px;
 }
