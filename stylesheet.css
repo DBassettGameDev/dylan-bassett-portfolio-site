@@ -294,7 +294,7 @@ main > section {
   .contact-list p {
     width: auto;
     max-width: none;
-    flex: 0 1 300px; /* Manual fix, added by hand (not AI) */
+    flex: 0 1 400px; /* Manual fix, added by hand (not AI) */
   }
 }
 
