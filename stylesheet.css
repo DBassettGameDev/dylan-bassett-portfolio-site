@@ -13,8 +13,8 @@
   --max-width: 1200px;
   --gutter: max(20px, calc((100% - var(--max-width)) / 2));
 }
-
-/* Font */
+ 
+/* Font */ 
 @font-face {
   font-family: 'Montserrat';
   src: url('fonts/Montserrat-Regular.ttf') format('truetype');
