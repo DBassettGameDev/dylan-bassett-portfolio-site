@@ -1,7 +1,7 @@
 /* Custom properties */
 :root {
-  --main-color: #ff0000;        
-  --accent-color: #ff8a8a;      
+  --main-color: #ff0000;
+  --accent-color: #ff8a8a;
   --secondary-color: #1f0404;
   --text-color: #fafafa;
   --bg-color: #000000;
@@ -9,6 +9,9 @@
   --hero-color: #230000;
   --heading-font: 'Montserrat', Arial, sans-serif;
   --radius: 8px;
+  --divider: 5px solid var(--bg-color);
+  --max-width: 1200px;
+  --gutter: max(20px, calc((100% - var(--max-width)) / 2));
 }
 
 /* Font */
@@ -20,12 +23,20 @@
   font-display: swap;
 }
 
-/* Main elements */
+/* box sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
   font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
   background-color: var(--bg-color);
   color: var(--text-color);
-  text-align: center;          
+  text-align: center;
   line-height: 1.6;
   margin: 0;
 }
@@ -49,34 +60,19 @@ p {
 }
 
 h1 {
-  font-size: 32px;
-  padding: 0 20px 20px;
+  font-size: 26px;
+  padding: 0 20px 24px;
 }
 
 h2 {
+  font-size: 26px;
   padding-bottom: 20px;
 }
 
 h3 {
+  font-size: 20px;
   padding-top: 20px;
   padding-bottom: 10px;
-}
-
-ul {
-  list-style-type: none;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-li {
-  display: inline-block;
-  margin-right: 15px;
-}
-
-hr {
-  border: none;
-  border-top: 5px solid var(--bg-color);
-  margin: 0 0 20px;
 }
 
 address {
@@ -93,58 +89,370 @@ a:focus-visible {
   color: var(--text-color);
 }
 
-nav a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 18px;
-}
-
 /* Images */
 img {
   max-width: 100%;
   height: auto;
 }
 
-header img {
-  padding-top: 20px;
-}
-
 .gameimage {
+  display: block;
+  margin: 0 auto;
   border: 5px solid var(--main-color);
   border-radius: var(--radius);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.gameimage:hover {
-  transform: rotate(-2deg) scale(1.02);
-  box-shadow: 0 10px 24px rgba(255, 0, 0, 0.25);
+/* Header */
+.site-header {
+  background-color: var(--hero-color);
+  padding: 20px var(--gutter) 0;
+}
+
+.site-logo {
+  display: inline-block;
+}
+
+.site-logo img {
+  display: block;
+  max-width: 160px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 20px;
+  list-style-type: none;
+  padding: 16px 0 20px;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 6px 4px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--accent-color);
 }
 
 /* Sections */
-.hero-section {
-  background-color: var(--hero-color);
+main > section {
+  padding: 24px var(--gutter) 0;
 }
 
+.projects-section,
+.contact-section {
+  border-top: var(--divider);
+}
+
+/* About section */
 .about-section {
   background: linear-gradient(to bottom, var(--hero-color) 0%, var(--content-bg-color) 100%);
+  padding-bottom: 10px;
 }
 
-.content-section-a,
-.content-section-c {
+.about-content {
+  max-width: 70ch;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-content p {
+  max-width: none;
+  padding: 0 0 16px;
+}
+
+/* Projects section  */
+.projects-section {
   background: linear-gradient(to left, var(--hero-color) 0%, var(--content-bg-color) 100%);
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.content-section-b {
-  background: linear-gradient(to right, var(--hero-color) 0%, var(--content-bg-color) 100%);
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  background-color: var(--bg-color);
+  border-top: var(--divider);
 }
 
-#contact {
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 20px 4px;
+}
+
+.project-card p {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.project-image {
+  display: block;
+}
+
+.card-a {
+  background: linear-gradient(to top, var(--hero-color) 0%, var(--content-bg-color) 100%);
+}
+
+/* card-b style was removed, it was originally an alternate style for the project cards. May revist, leaving this here as a reminder */
+
+/* ---------- Contact ---------- */
+
+/* 
+   AI SECTION: Contact
+   Tool: Claude
+
+   PROMPT:
+   "Using only stylesheet.css (do not change index.html), update the
+   Contact section. Focus on only the selectors .contact-section,
+   .contact-list, .contact-list p and .contact-list a. Turn the email
+   and LinkedIn links into buttons, with no text underline, a 2px
+   border using the vars main-color, radius for corners, text-color
+   for text.
+
+   On hover and focus-visible, fill the background with the var
+   content-bg-color and add a subtle red glow similar to .gameimage
+   hover shadow. Keep it mobile-first, so stacked on small screens,
+   then a centered Flexbox row at the 640px break point. Only use the
+   current custom properties in root, no new colors."
+
+   OUTPUT: everything from here to the "END AI-AUTHORED SECTION"
+   comment below.
+*/
+
+/* Section background and spacing */
+.contact-section {
   background-color: var(--secondary-color);
+  padding-bottom: 30px;
 }
 
-footer {
+/* Mobile first: buttons stacked in a centered Flexbox column */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+
+/* Base (mobile): no flex line here */
+.contact-list p {
+  width: 100%;
+  max-width: 320px;
+  margin: 0; /* Manual fix, added by hand (not AI) */
+  padding: 0;
+}
+
+/* The links themselves become buttons */
+.contact-list a {
+  display: block;
+  min-height: 44px;                         /* accessible tap target */
+  padding: 10px 24px;
+  border: 2px solid var(--main-color);
+  border-radius: var(--radius);
+  color: var(--text-color);
+  text-decoration: none;
+  overflow-wrap: anywhere;                  /* long email never overflows */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover + keyboard focus: filled background and a soft red glow.
+   The glow is --main-color at 25% opacity, matching .gameimage:hover */
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  background-color: var(--content-bg-color);
+  color: var(--text-color);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--main-color) 25%, transparent);
+}
+
+/* Visible focus ring for keyboard users */
+.contact-list a:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 3px;
+}
+
+/* 640px+: buttons sit side by side in a centered Flexbox row */
+@media (min-width: 640px) {
+  .contact-list {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+  }
+
+  .contact-list p {
+    width: auto;
+    max-width: none;
+    flex: 0 1 300px; /* Manual fix, added by hand (not AI) */
+  }
+}
+
+/* No color fade for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .contact-list a {
+    transition: none;
+  }
+}
+/* END OF AI-AUTHORED SECTION */
+
+
+
+
+
+/* Footer */
+.site-footer {
   background-color: var(--secondary-color);
+  border-top: 1px solid rgba(255, 138, 138, 0.15);
   font-size: 14px;
-  padding-top: 10px;
+  padding: 14px var(--gutter) 0;
+}
+
+/* Break point 1 (480px) */
+@media (min-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .site-nav ul {
+    gap: 4px 32px;
+  }
+
+  .project-card {
+    padding: 28px 28px 8px;
+  }
+}
+
+/* Breakpoint 2 (640px) */
+@media (min-width: 640px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+
+/* Breakpoint 3 (768px) */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 32px;
+    padding-top: 12px;
+    padding-bottom: 32px;
+  }
+
+  .site-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo nav"
+      "title title";
+    align-items: center;
+  }
+
+  .site-logo { grid-area: logo; }
+  .site-nav  { grid-area: nav; }
+  .site-header h1 { grid-area: title; }
+
+  .site-nav ul {
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .about-content p {
+    padding-bottom: 20px;
+  }
+
+  main > section {
+    padding-top: 36px;
+  }
+}
+
+/* Breakpoint 4 (1024px) */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .site-logo img {
+    max-width: 180px;
+  }
+}
+
+/* Breakpoint 5 (1280px) */
+@media (min-width: 1280px) {
+  body {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  .projects-section {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    padding-bottom: 48px;
+  }
+
+  .project-grid {
+    border: var(--divider);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .site-nav a {
+    font-size: 19px;
+  }
+}
+
+/* Breakpoint 6 (1600px) */
+@media (min-width: 1600px) {
+  :root {
+    --max-width: 1400px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  .site-logo img {
+    max-width: 200px;
+  }
+}
+
+/* Input & accessibility media queries */
+
+/* hover effect only on devices with a real hover */
+@media (hover: hover) {
+  .gameimage:hover {
+    transform: rotate(-2deg) scale(1.02);
+    box-shadow: 0 10px 24px rgba(255, 0, 0, 0.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gameimage {
+    transition: none;
+  }
+
+  .gameimage:hover {
+    transform: none;
+  }
 }
