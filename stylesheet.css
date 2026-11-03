@@ -13,8 +13,8 @@
   --max-width: 1200px;
   --gutter: max(20px, calc((100% - var(--max-width)) / 2));
 }
-
-/* Font */
+ 
+/* Font */ 
 @font-face {
   font-family: 'Montserrat';
   src: url('fonts/Montserrat-Regular.ttf') format('truetype');
@@ -294,7 +294,7 @@ main > section {
   .contact-list p {
     width: auto;
     max-width: none;
-    flex: 0 1 300px; /* Manual fix, added by hand (not AI) */
+    flex: 0 1 400px; /* Manual fix, added by hand (not AI) */
   }
 }
 
@@ -447,12 +447,18 @@ main > section {
   }
 }
 
+.project-image:focus-visible .gameimage {
+  transform: rotate(-2deg) scale(1.02);
+  box-shadow: 0 10px 24px rgba(255, 0, 0, 0.25);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .gameimage {
     transition: none;
   }
 
-  .gameimage:hover {
+  .gameimage:hover,
+  .project-image:focus-visible .gameimage {
     transform: none;
   }
 }
