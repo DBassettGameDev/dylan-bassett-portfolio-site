@@ -447,12 +447,18 @@ main > section {
   }
 }
 
+.project-image:focus-visible .gameimage {
+  transform: rotate(-2deg) scale(1.02);
+  box-shadow: 0 10px 24px rgba(255, 0, 0, 0.25);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .gameimage {
     transition: none;
   }
 
-  .gameimage:hover {
+  .gameimage:hover,
+  .project-image:focus-visible .gameimage {
     transform: none;
   }
 }
