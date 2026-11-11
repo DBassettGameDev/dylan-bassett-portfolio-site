@@ -478,7 +478,7 @@ main > section {
 
 .theme-toggle {
   position: fixed;
-  right: 16px;
+  left: 16px;
   bottom: 16px;
   z-index: 100;
   display: inline-flex;
