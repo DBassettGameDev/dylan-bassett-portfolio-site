@@ -1,3 +1,20 @@
+// Scroll reveals:
+
+ScrollReveal().reveal('.project-card', {
+  distance: '40px',
+  origin: 'bottom',
+  duration: 800,
+  interval: 150
+});
+
+ScrollReveal().reveal('.about-content', {
+  distance: '40px',
+  origin: 'bottom',
+  duration: 400,
+});
+
+// Dark/Light mode toggler:
+
 (function () {
   const root = document.documentElement;
   const STORAGE_KEY = 'theme';
